@@ -1,0 +1,2031 @@
+{
+  "taxonomy_name": "Unified Fashion Product Taxonomy",
+  "version": "1.0",
+  "description": "A deep nested fashion taxonomy combining best practices from Whatnot (context), Google (standardization), and Shopify (depth). Each product should map to exactly ONE leaf node.",
+
+  "design_principles": {
+    "taxonomy_structure": "Organized by WHAT the product IS (product type), not WHO it's for or WHEN to wear it",
+    "leaf_node_rule": "Each product must fall under exactly one leaf node",
+    "attributes_vs_taxonomy": {
+      "in_taxonomy": [
+        "Primary product type (Tops, Bottoms, Dresses)",
+        "Specific garment style (T-Shirt, Jeans, Maxi Dress)",
+        "Functional subcategories that change the product nature"
+      ],
+      "as_attributes": [
+        "Gender/Audience (Women's, Men's, Unisex, Kids)",
+        "Size type (Plus, Petite, Maternity, Big & Tall)",
+        "Era/Age (Vintage, Y2K, Contemporary, Modern)",
+        "Occasion/Context (Casual, Formal, Athletic, Workwear)",
+        "Condition (New, Used, NWT, Vintage)",
+        "Source (Boutique, Thrifted, Designer)",
+        "Season (Spring/Summer, Fall/Winter)",
+        "Material, Color, Pattern, Brand, Fit"
+      ]
+    }
+  },
+
+  "attributes": {
+    "gender_audience": {
+      "name": "Gender/Audience",
+      "required": true,
+      "values": ["Women's", "Men's", "Unisex", "Girls'", "Boys'", "Baby", "Toddler"]
+    },
+    "size_type": {
+      "name": "Size Type",
+      "required": false,
+      "values": ["Regular", "Plus Size", "Petite", "Tall", "Maternity", "Big & Tall", "Extended Sizes"]
+    },
+    "era_style_period": {
+      "name": "Era/Style Period",
+      "required": false,
+      "values": ["Contemporary/Modern", "Y2K (1990s-2000s)", "Vintage (1980s)", "Vintage (1970s)", "Vintage (1960s)", "Vintage (Pre-1960s)", "Retro-Inspired"]
+    },
+    "occasion_context": {
+      "name": "Occasion/Context",
+      "required": false,
+      "values": ["Casual", "Athletic/Activewear", "Formal/Evening", "Business/Professional", "Lounge/Sleepwear", "Beachwear", "Bridal/Wedding", "Costume/Cosplay"]
+    },
+    "condition": {
+      "name": "Condition",
+      "required": true,
+      "values": ["New with Tags", "New without Tags", "Pre-owned - Like New", "Pre-owned - Good", "Pre-owned - Fair", "Vintage"]
+    },
+    "source_type": {
+      "name": "Source Type",
+      "required": false,
+      "values": ["Boutique", "Designer/Luxury", "Fast Fashion", "Thrifted/Secondhand", "Handmade/Custom", "Wholesale"]
+    },
+    "season": {
+      "name": "Season",
+      "required": false,
+      "values": ["Spring", "Summer", "Fall", "Winter", "All Season"]
+    },
+    "material_primary": {
+      "name": "Primary Material",
+      "required": false,
+      "values": ["Cotton", "Polyester", "Silk", "Wool", "Denim", "Leather", "Synthetic", "Mixed/Blend"]
+    },
+    "color": {
+      "name": "Color",
+      "required": false,
+      "multi_select": true
+    },
+    "pattern": {
+      "name": "Pattern",
+      "required": false,
+      "values": ["Solid", "Striped", "Floral", "Plaid", "Animal Print", "Geometric", "Abstract"]
+    },
+    "fit_style": {
+      "name": "Fit Style",
+      "required": false,
+      "values": ["Slim/Fitted", "Regular", "Relaxed", "Oversized", "Tailored"]
+    }
+  },
+
+  "categories": [
+    {
+      "id": "fashion",
+      "level": 0,
+      "name": "Fashion & Apparel",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "tops",
+          "level": 1,
+          "name": "Tops",
+          "description": "Upper body garments worn on the torso",
+          "children": [
+            {
+              "id": "tops-tshirts",
+              "level": 2,
+              "name": "T-Shirts",
+              "description": "Short or long sleeve shirts, typically casual",
+              "children": [
+                {
+                  "id": "tops-tshirts-basic",
+                  "level": 3,
+                  "name": "Basic T-Shirts",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-tshirts-graphic",
+                  "level": 3,
+                  "name": "Graphic T-Shirts",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-tshirts-henley",
+                  "level": 3,
+                  "name": "Henley Shirts",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-tshirts-polo",
+                  "level": 3,
+                  "name": "Polo Shirts",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "tops-blouses",
+              "level": 2,
+              "name": "Blouses & Button-Ups",
+              "children": [
+                {
+                  "id": "tops-blouses-casual",
+                  "level": 3,
+                  "name": "Casual Button-Up Shirts",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-blouses-dress",
+                  "level": 3,
+                  "name": "Dress Shirts",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-blouses-blouse",
+                  "level": 3,
+                  "name": "Blouses",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-blouses-tunic",
+                  "level": 3,
+                  "name": "Tunics",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "tops-sweaters",
+              "level": 2,
+              "name": "Sweaters & Cardigans",
+              "children": [
+                {
+                  "id": "tops-sweaters-pullover",
+                  "level": 3,
+                  "name": "Pullover Sweaters",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-sweaters-cardigan",
+                  "level": 3,
+                  "name": "Cardigans",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-sweaters-turtleneck",
+                  "level": 3,
+                  "name": "Turtlenecks",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-sweaters-vneck",
+                  "level": 3,
+                  "name": "V-Neck Sweaters",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-sweaters-crewneck",
+                  "level": 3,
+                  "name": "Crewneck Sweaters",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "tops-sweatshirts",
+              "level": 2,
+              "name": "Sweatshirts & Hoodies",
+              "children": [
+                {
+                  "id": "tops-sweatshirts-hoodie",
+                  "level": 3,
+                  "name": "Hoodies",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-sweatshirts-crewneck",
+                  "level": 3,
+                  "name": "Crewneck Sweatshirts",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-sweatshirts-zip",
+                  "level": 3,
+                  "name": "Zip-Up Hoodies",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "tops-tanks",
+              "level": 2,
+              "name": "Tank Tops & Camisoles",
+              "children": [
+                {
+                  "id": "tops-tanks-basic",
+                  "level": 3,
+                  "name": "Basic Tank Tops",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-tanks-camisole",
+                  "level": 3,
+                  "name": "Camisoles",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-tanks-athletic",
+                  "level": 3,
+                  "name": "Athletic Tanks",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-tanks-halter",
+                  "level": 3,
+                  "name": "Halter Tops",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "tops-crop",
+              "level": 2,
+              "name": "Crop Tops",
+              "children": [
+                {
+                  "id": "tops-crop-tshirt",
+                  "level": 3,
+                  "name": "Cropped T-Shirts",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-crop-tank",
+                  "level": 3,
+                  "name": "Cropped Tanks",
+                  "leaf": true
+                },
+                {
+                  "id": "tops-crop-sweater",
+                  "level": 3,
+                  "name": "Cropped Sweaters",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "tops-bodysuits",
+              "level": 2,
+              "name": "Bodysuits",
+              "leaf": true
+            },
+            {
+              "id": "tops-other",
+              "level": 2,
+              "name": "Other Tops",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "id": "bottoms",
+          "level": 1,
+          "name": "Bottoms",
+          "description": "Lower body garments",
+          "children": [
+            {
+              "id": "bottoms-pants",
+              "level": 2,
+              "name": "Pants",
+              "children": [
+                {
+                  "id": "bottoms-pants-jeans",
+                  "level": 3,
+                  "name": "Jeans",
+                  "children": [
+                    {
+                      "id": "bottoms-pants-jeans-skinny",
+                      "level": 4,
+                      "name": "Skinny Jeans",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-jeans-straight",
+                      "level": 4,
+                      "name": "Straight Leg Jeans",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-jeans-bootcut",
+                      "level": 4,
+                      "name": "Bootcut Jeans",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-jeans-flare",
+                      "level": 4,
+                      "name": "Flare Jeans",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-jeans-wide",
+                      "level": 4,
+                      "name": "Wide Leg Jeans",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-jeans-boyfriend",
+                      "level": 4,
+                      "name": "Boyfriend Jeans",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-jeans-mom",
+                      "level": 4,
+                      "name": "Mom Jeans",
+                      "leaf": true
+                    }
+                  ]
+                },
+                {
+                  "id": "bottoms-pants-dress",
+                  "level": 3,
+                  "name": "Dress Pants",
+                  "children": [
+                    {
+                      "id": "bottoms-pants-dress-trousers",
+                      "level": 4,
+                      "name": "Trousers",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-dress-slacks",
+                      "level": 4,
+                      "name": "Slacks",
+                      "leaf": true
+                    }
+                  ]
+                },
+                {
+                  "id": "bottoms-pants-casual",
+                  "level": 3,
+                  "name": "Casual Pants",
+                  "children": [
+                    {
+                      "id": "bottoms-pants-casual-chinos",
+                      "level": 4,
+                      "name": "Chinos",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-casual-khakis",
+                      "level": 4,
+                      "name": "Khakis",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-casual-cargo",
+                      "level": 4,
+                      "name": "Cargo Pants",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-casual-joggers",
+                      "level": 4,
+                      "name": "Joggers",
+                      "leaf": true
+                    }
+                  ]
+                },
+                {
+                  "id": "bottoms-pants-leggings",
+                  "level": 3,
+                  "name": "Leggings & Tights",
+                  "children": [
+                    {
+                      "id": "bottoms-pants-leggings-basic",
+                      "level": 4,
+                      "name": "Basic Leggings",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-leggings-athletic",
+                      "level": 4,
+                      "name": "Athletic Leggings",
+                      "leaf": true
+                    },
+                    {
+                      "id": "bottoms-pants-leggings-tights",
+                      "level": 4,
+                      "name": "Tights",
+                      "leaf": true
+                    }
+                  ]
+                },
+                {
+                  "id": "bottoms-pants-sweatpants",
+                  "level": 3,
+                  "name": "Sweatpants",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "bottoms-shorts",
+              "level": 2,
+              "name": "Shorts",
+              "children": [
+                {
+                  "id": "bottoms-shorts-denim",
+                  "level": 3,
+                  "name": "Denim Shorts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-shorts-casual",
+                  "level": 3,
+                  "name": "Casual Shorts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-shorts-athletic",
+                  "level": 3,
+                  "name": "Athletic Shorts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-shorts-dress",
+                  "level": 3,
+                  "name": "Dress Shorts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-shorts-bermuda",
+                  "level": 3,
+                  "name": "Bermuda Shorts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-shorts-bike",
+                  "level": 3,
+                  "name": "Bike Shorts",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "bottoms-skirts",
+              "level": 2,
+              "name": "Skirts",
+              "children": [
+                {
+                  "id": "bottoms-skirts-mini",
+                  "level": 3,
+                  "name": "Mini Skirts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-skirts-midi",
+                  "level": 3,
+                  "name": "Midi Skirts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-skirts-maxi",
+                  "level": 3,
+                  "name": "Maxi Skirts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-skirts-pencil",
+                  "level": 3,
+                  "name": "Pencil Skirts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-skirts-aline",
+                  "level": 3,
+                  "name": "A-Line Skirts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-skirts-pleated",
+                  "level": 3,
+                  "name": "Pleated Skirts",
+                  "leaf": true
+                },
+                {
+                  "id": "bottoms-skirts-wrap",
+                  "level": 3,
+                  "name": "Wrap Skirts",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "bottoms-skorts",
+              "level": 2,
+              "name": "Skorts",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "id": "dresses",
+          "level": 1,
+          "name": "Dresses & Jumpsuits",
+          "children": [
+            {
+              "id": "dresses-casual",
+              "level": 2,
+              "name": "Casual Dresses",
+              "children": [
+                {
+                  "id": "dresses-casual-mini",
+                  "level": 3,
+                  "name": "Casual Mini Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-casual-midi",
+                  "level": 3,
+                  "name": "Casual Midi Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-casual-maxi",
+                  "level": 3,
+                  "name": "Casual Maxi Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-casual-sundress",
+                  "level": 3,
+                  "name": "Sundresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-casual-tshirt",
+                  "level": 3,
+                  "name": "T-Shirt Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-casual-shift",
+                  "level": 3,
+                  "name": "Shift Dresses",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "dresses-formal",
+              "level": 2,
+              "name": "Formal & Evening Dresses",
+              "children": [
+                {
+                  "id": "dresses-formal-cocktail",
+                  "level": 3,
+                  "name": "Cocktail Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-formal-evening-gown",
+                  "level": 3,
+                  "name": "Evening Gowns",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-formal-little-black",
+                  "level": 3,
+                  "name": "Little Black Dresses",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "dresses-work",
+              "level": 2,
+              "name": "Work & Business Dresses",
+              "children": [
+                {
+                  "id": "dresses-work-sheath",
+                  "level": 3,
+                  "name": "Sheath Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-work-shirt",
+                  "level": 3,
+                  "name": "Shirt Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-work-wrap",
+                  "level": 3,
+                  "name": "Wrap Dresses",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "dresses-special",
+              "level": 2,
+              "name": "Special Occasion Dresses",
+              "children": [
+                {
+                  "id": "dresses-special-wedding",
+                  "level": 3,
+                  "name": "Wedding Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-special-bridesmaid",
+                  "level": 3,
+                  "name": "Bridesmaid Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-special-prom",
+                  "level": 3,
+                  "name": "Prom Dresses",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-special-party",
+                  "level": 3,
+                  "name": "Party Dresses",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "dresses-jumpsuits",
+              "level": 2,
+              "name": "Jumpsuits & Rompers",
+              "children": [
+                {
+                  "id": "dresses-jumpsuits-full",
+                  "level": 3,
+                  "name": "Jumpsuits",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-jumpsuits-romper",
+                  "level": 3,
+                  "name": "Rompers",
+                  "leaf": true
+                },
+                {
+                  "id": "dresses-jumpsuits-overalls",
+                  "level": 3,
+                  "name": "Overalls",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "outerwear",
+          "level": 1,
+          "name": "Outerwear & Coats",
+          "children": [
+            {
+              "id": "outerwear-jackets",
+              "level": 2,
+              "name": "Jackets",
+              "children": [
+                {
+                  "id": "outerwear-jackets-denim",
+                  "level": 3,
+                  "name": "Denim Jackets",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-jackets-leather",
+                  "level": 3,
+                  "name": "Leather Jackets",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-jackets-bomber",
+                  "level": 3,
+                  "name": "Bomber Jackets",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-jackets-blazer",
+                  "level": 3,
+                  "name": "Blazers",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-jackets-moto",
+                  "level": 3,
+                  "name": "Moto Jackets",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-jackets-utility",
+                  "level": 3,
+                  "name": "Utility Jackets",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "outerwear-coats",
+              "level": 2,
+              "name": "Coats",
+              "children": [
+                {
+                  "id": "outerwear-coats-trench",
+                  "level": 3,
+                  "name": "Trench Coats",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-coats-pea",
+                  "level": 3,
+                  "name": "Pea Coats",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-coats-overcoat",
+                  "level": 3,
+                  "name": "Overcoats",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-coats-wool",
+                  "level": 3,
+                  "name": "Wool Coats",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "outerwear-winter",
+              "level": 2,
+              "name": "Winter Coats & Parkas",
+              "children": [
+                {
+                  "id": "outerwear-winter-puffer",
+                  "level": 3,
+                  "name": "Puffer Jackets",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-winter-down",
+                  "level": 3,
+                  "name": "Down Coats",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-winter-parka",
+                  "level": 3,
+                  "name": "Parkas",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "outerwear-rain",
+              "level": 2,
+              "name": "Rain Jackets & Windbreakers",
+              "children": [
+                {
+                  "id": "outerwear-rain-raincoat",
+                  "level": 3,
+                  "name": "Rain Coats",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-rain-windbreaker",
+                  "level": 3,
+                  "name": "Windbreakers",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "outerwear-vests",
+              "level": 2,
+              "name": "Vests",
+              "children": [
+                {
+                  "id": "outerwear-vests-puffer",
+                  "level": 3,
+                  "name": "Puffer Vests",
+                  "leaf": true
+                },
+                {
+                  "id": "outerwear-vests-utility",
+                  "level": 3,
+                  "name": "Utility Vests",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "activewear",
+          "level": 1,
+          "name": "Activewear & Athletic",
+          "children": [
+            {
+              "id": "activewear-tops",
+              "level": 2,
+              "name": "Athletic Tops",
+              "children": [
+                {
+                  "id": "activewear-tops-tshirt",
+                  "level": 3,
+                  "name": "Athletic T-Shirts",
+                  "leaf": true
+                },
+                {
+                  "id": "activewear-tops-tank",
+                  "level": 3,
+                  "name": "Athletic Tanks",
+                  "leaf": true
+                },
+                {
+                  "id": "activewear-tops-longsleeve",
+                  "level": 3,
+                  "name": "Athletic Long Sleeves",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "activewear-bottoms",
+              "level": 2,
+              "name": "Athletic Bottoms",
+              "children": [
+                {
+                  "id": "activewear-bottoms-leggings",
+                  "level": 3,
+                  "name": "Athletic Leggings",
+                  "leaf": true
+                },
+                {
+                  "id": "activewear-bottoms-shorts",
+                  "level": 3,
+                  "name": "Athletic Shorts",
+                  "leaf": true
+                },
+                {
+                  "id": "activewear-bottoms-joggers",
+                  "level": 3,
+                  "name": "Athletic Joggers",
+                  "leaf": true
+                },
+                {
+                  "id": "activewear-bottoms-sweatpants",
+                  "level": 3,
+                  "name": "Athletic Sweatpants",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "activewear-sportsbra",
+              "level": 2,
+              "name": "Sports Bras",
+              "leaf": true
+            },
+            {
+              "id": "activewear-sets",
+              "level": 2,
+              "name": "Athletic Sets",
+              "leaf": true
+            },
+            {
+              "id": "activewear-outerwear",
+              "level": 2,
+              "name": "Athletic Outerwear",
+              "children": [
+                {
+                  "id": "activewear-outerwear-hoodie",
+                  "level": 3,
+                  "name": "Athletic Hoodies",
+                  "leaf": true
+                },
+                {
+                  "id": "activewear-outerwear-jacket",
+                  "level": 3,
+                  "name": "Athletic Jackets",
+                  "leaf": true
+                },
+                {
+                  "id": "activewear-outerwear-track",
+                  "level": 3,
+                  "name": "Track Suits",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "swimwear",
+          "level": 1,
+          "name": "Swimwear & Beachwear",
+          "children": [
+            {
+              "id": "swimwear-onepiece",
+              "level": 2,
+              "name": "One-Piece Swimsuits",
+              "leaf": true
+            },
+            {
+              "id": "swimwear-bikini",
+              "level": 2,
+              "name": "Bikinis",
+              "children": [
+                {
+                  "id": "swimwear-bikini-top",
+                  "level": 3,
+                  "name": "Bikini Tops",
+                  "leaf": true
+                },
+                {
+                  "id": "swimwear-bikini-bottom",
+                  "level": 3,
+                  "name": "Bikini Bottoms",
+                  "leaf": true
+                },
+                {
+                  "id": "swimwear-bikini-set",
+                  "level": 3,
+                  "name": "Bikini Sets",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "swimwear-tankini",
+              "level": 2,
+              "name": "Tankinis",
+              "leaf": true
+            },
+            {
+              "id": "swimwear-coverup",
+              "level": 2,
+              "name": "Swim Cover-Ups",
+              "leaf": true
+            },
+            {
+              "id": "swimwear-trunks",
+              "level": 2,
+              "name": "Swim Trunks",
+              "leaf": true
+            },
+            {
+              "id": "swimwear-boardshorts",
+              "level": 2,
+              "name": "Board Shorts",
+              "leaf": true
+            },
+            {
+              "id": "swimwear-rash",
+              "level": 2,
+              "name": "Rash Guards",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "id": "underwear",
+          "level": 1,
+          "name": "Underwear & Intimates",
+          "children": [
+            {
+              "id": "underwear-bras",
+              "level": 2,
+              "name": "Bras",
+              "children": [
+                {
+                  "id": "underwear-bras-everyday",
+                  "level": 3,
+                  "name": "Everyday Bras",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-bras-sports",
+                  "level": 3,
+                  "name": "Sports Bras",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-bras-push",
+                  "level": 3,
+                  "name": "Push-Up Bras",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-bras-bralette",
+                  "level": 3,
+                  "name": "Bralettes",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-bras-strapless",
+                  "level": 3,
+                  "name": "Strapless Bras",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "underwear-panties",
+              "level": 2,
+              "name": "Panties & Underwear",
+              "children": [
+                {
+                  "id": "underwear-panties-briefs",
+                  "level": 3,
+                  "name": "Briefs",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-panties-bikini",
+                  "level": 3,
+                  "name": "Bikini Underwear",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-panties-thong",
+                  "level": 3,
+                  "name": "Thongs",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-panties-boyshort",
+                  "level": 3,
+                  "name": "Boyshorts",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-panties-hipster",
+                  "level": 3,
+                  "name": "Hipsters",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "underwear-mens",
+              "level": 2,
+              "name": "Men's Underwear",
+              "children": [
+                {
+                  "id": "underwear-mens-boxers",
+                  "level": 3,
+                  "name": "Boxers",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-mens-briefs",
+                  "level": 3,
+                  "name": "Briefs",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-mens-boxer-briefs",
+                  "level": 3,
+                  "name": "Boxer Briefs",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-mens-trunks",
+                  "level": 3,
+                  "name": "Trunks",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "underwear-shapewear",
+              "level": 2,
+              "name": "Shapewear",
+              "leaf": true
+            },
+            {
+              "id": "underwear-lingerie",
+              "level": 2,
+              "name": "Lingerie",
+              "children": [
+                {
+                  "id": "underwear-lingerie-babydoll",
+                  "level": 3,
+                  "name": "Babydoll & Chemises",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-lingerie-teddy",
+                  "level": 3,
+                  "name": "Teddies",
+                  "leaf": true
+                },
+                {
+                  "id": "underwear-lingerie-bodysuit",
+                  "level": 3,
+                  "name": "Lingerie Bodysuits",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "underwear-undershirts",
+              "level": 2,
+              "name": "Undershirts",
+              "leaf": true
+            },
+            {
+              "id": "underwear-slips",
+              "level": 2,
+              "name": "Slips",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "id": "sleepwear",
+          "level": 1,
+          "name": "Sleepwear & Loungewear",
+          "children": [
+            {
+              "id": "sleepwear-pajamas",
+              "level": 2,
+              "name": "Pajama Sets",
+              "leaf": true
+            },
+            {
+              "id": "sleepwear-nightgown",
+              "level": 2,
+              "name": "Nightgowns",
+              "leaf": true
+            },
+            {
+              "id": "sleepwear-sleep-shirt",
+              "level": 2,
+              "name": "Sleep Shirts",
+              "leaf": true
+            },
+            {
+              "id": "sleepwear-lounge-pants",
+              "level": 2,
+              "name": "Lounge Pants",
+              "leaf": true
+            },
+            {
+              "id": "sleepwear-robe",
+              "level": 2,
+              "name": "Robes",
+              "leaf": true
+            },
+            {
+              "id": "sleepwear-lounge-set",
+              "level": 2,
+              "name": "Lounge Sets",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "id": "suits",
+          "level": 1,
+          "name": "Suits & Formal Sets",
+          "children": [
+            {
+              "id": "suits-business",
+              "level": 2,
+              "name": "Business Suits",
+              "children": [
+                {
+                  "id": "suits-business-jacket",
+                  "level": 3,
+                  "name": "Suit Jackets",
+                  "leaf": true
+                },
+                {
+                  "id": "suits-business-pants",
+                  "level": 3,
+                  "name": "Suit Pants",
+                  "leaf": true
+                },
+                {
+                  "id": "suits-business-set",
+                  "level": 3,
+                  "name": "Suit Sets",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "suits-tuxedo",
+              "level": 2,
+              "name": "Tuxedos",
+              "leaf": true
+            },
+            {
+              "id": "suits-pant-suit",
+              "level": 2,
+              "name": "Pant Suits",
+              "leaf": true
+            },
+            {
+              "id": "suits-skirt-suit",
+              "level": 2,
+              "name": "Skirt Suits",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "id": "socks-hosiery",
+          "level": 1,
+          "name": "Socks & Hosiery",
+          "children": [
+            {
+              "id": "socks-hosiery-ankle",
+              "level": 2,
+              "name": "Ankle Socks",
+              "leaf": true
+            },
+            {
+              "id": "socks-hosiery-crew",
+              "level": 2,
+              "name": "Crew Socks",
+              "leaf": true
+            },
+            {
+              "id": "socks-hosiery-knee",
+              "level": 2,
+              "name": "Knee-High Socks",
+              "leaf": true
+            },
+            {
+              "id": "socks-hosiery-thigh",
+              "level": 2,
+              "name": "Thigh-High Socks",
+              "leaf": true
+            },
+            {
+              "id": "socks-hosiery-nylon",
+              "level": 2,
+              "name": "Nylons & Pantyhose",
+              "leaf": true
+            },
+            {
+              "id": "socks-hosiery-tights",
+              "level": 2,
+              "name": "Fashion Tights",
+              "leaf": true
+            },
+            {
+              "id": "socks-hosiery-no-show",
+              "level": 2,
+              "name": "No-Show Socks",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "id": "shoes",
+          "level": 1,
+          "name": "Footwear",
+          "children": [
+            {
+              "id": "shoes-sneakers",
+              "level": 2,
+              "name": "Sneakers & Athletic Shoes",
+              "children": [
+                {
+                  "id": "shoes-sneakers-running",
+                  "level": 3,
+                  "name": "Running Shoes",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-sneakers-training",
+                  "level": 3,
+                  "name": "Training Shoes",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-sneakers-casual",
+                  "level": 3,
+                  "name": "Casual Sneakers",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-sneakers-basketball",
+                  "level": 3,
+                  "name": "Basketball Shoes",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-sneakers-skateboard",
+                  "level": 3,
+                  "name": "Skate Shoes",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "shoes-boots",
+              "level": 2,
+              "name": "Boots",
+              "children": [
+                {
+                  "id": "shoes-boots-ankle",
+                  "level": 3,
+                  "name": "Ankle Boots",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-boots-knee",
+                  "level": 3,
+                  "name": "Knee-High Boots",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-boots-thigh",
+                  "level": 3,
+                  "name": "Thigh-High Boots",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-boots-combat",
+                  "level": 3,
+                  "name": "Combat Boots",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-boots-chelsea",
+                  "level": 3,
+                  "name": "Chelsea Boots",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-boots-cowboy",
+                  "level": 3,
+                  "name": "Cowboy Boots",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-boots-winter",
+                  "level": 3,
+                  "name": "Winter Boots",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-boots-rain",
+                  "level": 3,
+                  "name": "Rain Boots",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-boots-work",
+                  "level": 3,
+                  "name": "Work Boots",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "shoes-heels",
+              "level": 2,
+              "name": "Heels",
+              "children": [
+                {
+                  "id": "shoes-heels-pumps",
+                  "level": 3,
+                  "name": "Pumps",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-heels-stiletto",
+                  "level": 3,
+                  "name": "Stiletto Heels",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-heels-block",
+                  "level": 3,
+                  "name": "Block Heels",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-heels-wedge",
+                  "level": 3,
+                  "name": "Wedge Heels",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-heels-kitten",
+                  "level": 3,
+                  "name": "Kitten Heels",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-heels-platform",
+                  "level": 3,
+                  "name": "Platform Heels",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "shoes-flats",
+              "level": 2,
+              "name": "Flats",
+              "children": [
+                {
+                  "id": "shoes-flats-ballet",
+                  "level": 3,
+                  "name": "Ballet Flats",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-flats-loafers",
+                  "level": 3,
+                  "name": "Loafers",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-flats-mules",
+                  "level": 3,
+                  "name": "Mules",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-flats-pointed",
+                  "level": 3,
+                  "name": "Pointed Flats",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "shoes-sandals",
+              "level": 2,
+              "name": "Sandals",
+              "children": [
+                {
+                  "id": "shoes-sandals-flat",
+                  "level": 3,
+                  "name": "Flat Sandals",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-sandals-heeled",
+                  "level": 3,
+                  "name": "Heeled Sandals",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-sandals-gladiator",
+                  "level": 3,
+                  "name": "Gladiator Sandals",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-sandals-sport",
+                  "level": 3,
+                  "name": "Sport Sandals",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-sandals-slide",
+                  "level": 3,
+                  "name": "Slide Sandals",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "shoes-formal",
+              "level": 2,
+              "name": "Formal Shoes",
+              "children": [
+                {
+                  "id": "shoes-formal-oxford",
+                  "level": 3,
+                  "name": "Oxfords",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-formal-derby",
+                  "level": 3,
+                  "name": "Derby Shoes",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-formal-dress",
+                  "level": 3,
+                  "name": "Dress Shoes",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "shoes-casual",
+              "level": 2,
+              "name": "Casual Shoes",
+              "children": [
+                {
+                  "id": "shoes-casual-slip-on",
+                  "level": 3,
+                  "name": "Slip-On Shoes",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-casual-boat",
+                  "level": 3,
+                  "name": "Boat Shoes",
+                  "leaf": true
+                },
+                {
+                  "id": "shoes-casual-espadrille",
+                  "level": 3,
+                  "name": "Espadrilles",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "shoes-slippers",
+              "level": 2,
+              "name": "Slippers",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "id": "accessories",
+          "level": 1,
+          "name": "Accessories",
+          "children": [
+            {
+              "id": "accessories-bags",
+              "level": 2,
+              "name": "Bags",
+              "children": [
+                {
+                  "id": "accessories-bags-handbag",
+                  "level": 3,
+                  "name": "Handbags",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-bags-tote",
+                  "level": 3,
+                  "name": "Tote Bags",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-bags-crossbody",
+                  "level": 3,
+                  "name": "Crossbody Bags",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-bags-shoulder",
+                  "level": 3,
+                  "name": "Shoulder Bags",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-bags-clutch",
+                  "level": 3,
+                  "name": "Clutches",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-bags-backpack",
+                  "level": 3,
+                  "name": "Backpacks",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-bags-messenger",
+                  "level": 3,
+                  "name": "Messenger Bags",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-bags-wallet",
+                  "level": 3,
+                  "name": "Wallets",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-bags-wristlet",
+                  "level": 3,
+                  "name": "Wristlets",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "accessories-jewelry",
+              "level": 2,
+              "name": "Jewelry",
+              "children": [
+                {
+                  "id": "accessories-jewelry-necklace",
+                  "level": 3,
+                  "name": "Necklaces",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-jewelry-earring",
+                  "level": 3,
+                  "name": "Earrings",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-jewelry-bracelet",
+                  "level": 3,
+                  "name": "Bracelets",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-jewelry-ring",
+                  "level": 3,
+                  "name": "Rings",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-jewelry-anklet",
+                  "level": 3,
+                  "name": "Anklets",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-jewelry-brooch",
+                  "level": 3,
+                  "name": "Brooches & Pins",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-jewelry-body",
+                  "level": 3,
+                  "name": "Body Jewelry",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "accessories-watches",
+              "level": 2,
+              "name": "Watches",
+              "children": [
+                {
+                  "id": "accessories-watches-analog",
+                  "level": 3,
+                  "name": "Analog Watches",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-watches-digital",
+                  "level": 3,
+                  "name": "Digital Watches",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-watches-smart",
+                  "level": 3,
+                  "name": "Smart Watches",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "accessories-belts",
+              "level": 2,
+              "name": "Belts",
+              "leaf": true
+            },
+            {
+              "id": "accessories-hats",
+              "level": 2,
+              "name": "Hats & Caps",
+              "children": [
+                {
+                  "id": "accessories-hats-baseball",
+                  "level": 3,
+                  "name": "Baseball Caps",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-hats-beanie",
+                  "level": 3,
+                  "name": "Beanies",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-hats-bucket",
+                  "level": 3,
+                  "name": "Bucket Hats",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-hats-fedora",
+                  "level": 3,
+                  "name": "Fedoras",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-hats-sun",
+                  "level": 3,
+                  "name": "Sun Hats",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-hats-winter",
+                  "level": 3,
+                  "name": "Winter Hats",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "accessories-scarves",
+              "level": 2,
+              "name": "Scarves & Wraps",
+              "children": [
+                {
+                  "id": "accessories-scarves-scarf",
+                  "level": 3,
+                  "name": "Scarves",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-scarves-shawl",
+                  "level": 3,
+                  "name": "Shawls",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-scarves-bandana",
+                  "level": 3,
+                  "name": "Bandanas",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "accessories-gloves",
+              "level": 2,
+              "name": "Gloves & Mittens",
+              "children": [
+                {
+                  "id": "accessories-gloves-winter",
+                  "level": 3,
+                  "name": "Winter Gloves",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-gloves-mitten",
+                  "level": 3,
+                  "name": "Mittens",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-gloves-fashion",
+                  "level": 3,
+                  "name": "Fashion Gloves",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "accessories-sunglasses",
+              "level": 2,
+              "name": "Sunglasses & Eyewear",
+              "children": [
+                {
+                  "id": "accessories-sunglasses-aviator",
+                  "level": 3,
+                  "name": "Aviator Sunglasses",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-sunglasses-wayfarer",
+                  "level": 3,
+                  "name": "Wayfarer Sunglasses",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-sunglasses-cat",
+                  "level": 3,
+                  "name": "Cat Eye Sunglasses",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-sunglasses-sport",
+                  "level": 3,
+                  "name": "Sport Sunglasses",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-sunglasses-fashion",
+                  "level": 3,
+                  "name": "Fashion Eyewear",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "accessories-ties",
+              "level": 2,
+              "name": "Ties & Neckwear",
+              "children": [
+                {
+                  "id": "accessories-ties-necktie",
+                  "level": 3,
+                  "name": "Neckties",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-ties-bowtie",
+                  "level": 3,
+                  "name": "Bow Ties",
+                  "leaf": true
+                }
+              ]
+            },
+            {
+              "id": "accessories-hair",
+              "level": 2,
+              "name": "Hair Accessories",
+              "children": [
+                {
+                  "id": "accessories-hair-clip",
+                  "level": 3,
+                  "name": "Hair Clips",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-hair-band",
+                  "level": 3,
+                  "name": "Headbands",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-hair-scrunchie",
+                  "level": 3,
+                  "name": "Scrunchies",
+                  "leaf": true
+                },
+                {
+                  "id": "accessories-hair-tie",
+                  "level": 3,
+                  "name": "Hair Ties",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "costumes",
+          "level": 1,
+          "name": "Costumes & Special Attire",
+          "children": [
+            {
+              "id": "costumes-halloween",
+              "level": 2,
+              "name": "Halloween Costumes",
+              "leaf": true
+            },
+            {
+              "id": "costumes-cosplay",
+              "level": 2,
+              "name": "Cosplay Costumes",
+              "leaf": true
+            },
+            {
+              "id": "costumes-theatrical",
+              "level": 2,
+              "name": "Theatrical Costumes",
+              "leaf": true
+            },
+            {
+              "id": "costumes-historical",
+              "level": 2,
+              "name": "Historical & Period Costumes",
+              "leaf": true
+            }
+          ]
+        },
+        {
+          "id": "uniforms",
+          "level": 1,
+          "name": "Uniforms & Workwear",
+          "children": [
+            {
+              "id": "uniforms-medical",
+              "level": 2,
+              "name": "Medical Scrubs",
+              "leaf": true
+            },
+            {
+              "id": "uniforms-work",
+              "level": 2,
+              "name": "Work Uniforms",
+              "leaf": true
+            },
+            {
+              "id": "uniforms-school",
+              "level": 2,
+              "name": "School Uniforms",
+              "leaf": true
+            },
+            {
+              "id": "uniforms-chef",
+              "level": 2,
+              "name": "Chef Wear",
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "usage_examples": {
+    "example_1": {
+      "product": "Women's Vintage Y2K Graphic T-Shirt",
+      "taxonomy_path": "Fashion & Apparel > Tops > T-Shirts > Graphic T-Shirts",
+      "leaf_node_id": "tops-tshirts-graphic",
+      "attributes": {
+        "gender_audience": "Women's",
+        "era_style_period": "Y2K (1990s-2000s)",
+        "condition": "Pre-owned - Good",
+        "source_type": "Thrifted/Secondhand",
+        "occasion_context": "Casual",
+        "fit_style": "Relaxed"
+      }
+    },
+    "example_2": {
+      "product": "Plus Size Floral Maxi Dress",
+      "taxonomy_path": "Fashion & Apparel > Dresses & Jumpsuits > Casual Dresses > Casual Maxi Dresses",
+      "leaf_node_id": "dresses-casual-maxi",
+      "attributes": {
+        "gender_audience": "Women's",
+        "size_type": "Plus Size",
+        "era_style_period": "Contemporary/Modern",
+        "condition": "New with Tags",
+        "source_type": "Boutique",
+        "occasion_context": "Casual",
+        "pattern": "Floral",
+        "season": "Summer"
+      }
+    },
+    "example_3": {
+      "product": "Men's Athletic Joggers",
+      "taxonomy_path": "Fashion & Apparel > Activewear & Athletic > Athletic Bottoms > Athletic Joggers",
+      "leaf_node_id": "activewear-bottoms-joggers",
+      "attributes": {
+        "gender_audience": "Men's",
+        "era_style_period": "Contemporary/Modern",
+        "condition": "New without Tags",
+        "occasion_context": "Athletic/Activewear",
+        "material_primary": "Polyester"
+      }
+    },
+    "example_4": {
+      "product": "Designer Leather Crossbody Bag",
+      "taxonomy_path": "Fashion & Apparel > Accessories > Bags > Crossbody Bags",
+      "leaf_node_id": "accessories-bags-crossbody",
+      "attributes": {
+        "gender_audience": "Women's",
+        "condition": "Pre-owned - Like New",
+        "source_type": "Designer/Luxury",
+        "material_primary": "Leather",
+        "color": "Black"
+      }
+    }
+  },
+
+  "implementation_notes": {
+    "single_leaf_node": "Each product should be classified under exactly ONE leaf node based on what the product fundamentally IS",
+    "attribute_flexibility": "Use attributes to describe WHO it's for, WHEN to wear it, and other descriptive properties",
+    "context_via_attributes": "Whatnot's context-based categories (Vintage, Boutiques) become attributes (era_style_period, source_type)",
+    "avoid_redundancy": "Don't duplicate categories for different audiences - use gender as an attribute instead",
+    "extensibility": "New attributes can be added without restructuring the taxonomy tree",
+    "search_optimization": "Products can be filtered by any combination of taxonomy + attributes"
+  }
+}
